@@ -1,0 +1,7 @@
+E:\开发\Forensics\Component\bin\Debug\Component.dll
+E:\开发\Forensics\Component\bin\Debug\Component.pdb
+E:\开发\Forensics\Component\obj\Debug\Forensics.Pager.resources
+E:\开发\Forensics\Component\obj\Debug\Component.csproj.GenerateResource.Cache
+E:\开发\Forensics\Component\obj\Debug\Component.dll
+E:\开发\Forensics\Component\obj\Debug\Component.pdb
+E:\开发\Forensics\Component\obj\Debug\Component.csprojResolveAssemblyReference.cache

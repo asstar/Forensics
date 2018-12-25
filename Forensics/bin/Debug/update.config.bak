@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Enabled>true</Enabled>
+  <ServerUrl>http://localhost:8009/updateservice.xml</ServerUrl>
+  <UpdateFileList>
+    <LocalFile path="Forensics.exe" lastver="1.0.0.2" size="155648" />
+    <LocalFile path="工作量证明PoW、权益证明机制PoS在货币系统中的意义.txt" lastver="1.0.0.2" size="12288" />
+  </UpdateFileList>
+</Config>

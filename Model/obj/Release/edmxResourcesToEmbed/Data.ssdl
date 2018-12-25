@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=E:\开发\Forensics\Forensics\bin\Debug\Database.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Affix">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Content" Type="blob" />
+    <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Seq" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Type" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Account" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="QQFriend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendAccount" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendNickName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SendTime" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Count" Type="integer" />
+    <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="QQGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GroupNum" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendAccount" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendNickName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SendTime" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Count" Type="integer" />
+    <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Affix" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="Sms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Name" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SendTime" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Count" Type="integer" />
+    <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_010400">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="COLLECT_TARGET_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SEQUENCE_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="RELATIONSHIP_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PRIVACYCONFIG" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_STATUS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_TIME" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_010500">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="COLLECT_TARGET_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SEQUENCE_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PHONE_VALUE_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PHONE_NUMBER_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="RELATIONSHIP_ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_STATUS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_TIME" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_010700">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="COLLECT_TARGET_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MSISDN" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="RELATIONSHIP_ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="RELATIONSHIP_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LOCAL_ACTION" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MAIL_SEND_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CONTENT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MAIL_VIEW_STATUS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MAIL_SAVE_FOLDER" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PRIVACYCONFIG" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_STATUS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="INTERCEPT_STATE" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_020400">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="COLLECT_TARGET_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CONTACT_ACCOUNT_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ACCOUNT_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GROUP_NUM" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GROUP_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_NICKNAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_REMARK" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="AREA" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CITY_CODE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FIXED_PHONE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MSISDN" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="EMAIL_ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CERTIFICATE_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CERTIFICATE_CODE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SEXCODE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="AGE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="POSTAL_ADDRESS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="POSTAL_CODE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="OCCUPATION_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="BLOOD_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SIGN_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="PERSONAL_DESC" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="REG_CITY" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GRADUATESCHOOL" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ZODIAC" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CONSTALLATION" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="BIRTHDAY" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_STATUS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="USER_PHOTO" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ACCOUNT_REG_DATE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LAST_LOGIN_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LATEST_MOD_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LAST_TIME" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_020500">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="COLLECT_TARGET_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CONTACT_ACCOUNT_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ACCOUNT_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="REGIS_NICKNAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_NICKNAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CONTENT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MAIL_SEND_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LOCAL_ACTION" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="TALK_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_STATUS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MAINFILE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MEDIA_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CITY_CODE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="COMPANY_ADDRESS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LONGITUDE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LATITUDE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ABOVE_SEALEVEL" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_020600">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="COLLECT_TARGET_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CONTACT_ACCOUNT_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ACCOUNT_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GROUP_NUM" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GROUP_NAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_ACCOUNT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FRIEND_NICKNAME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CONTENT" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MAIL_SEND_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LOCAL_ACTION" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="TALK_ID" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_STATUS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DELETE_TIME" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MAINFILE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="MEDIA_TYPE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="CITY_CODE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="COMPANY_ADDRESS" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LONGITUDE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="LATITUDE" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="ABOVE_SEALEVEL" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WXFriend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendAccount" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendNickName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SendTime" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Count" Type="integer" />
+    <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Affix" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityType Name="WXGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="nvarchar" MaxLength="2147483647" Nullable="false" />
+    <Property Name="Account" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GroupNum" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="GroupName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendAccount" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="FriendNickName" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Content" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="SendTime" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Direction" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Count" Type="integer" />
+    <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
+    <Property Name="Affix" Type="nvarchar" MaxLength="2147483647" />
+  </EntityType>
+  <EntityContainer Name="ModelStoreContainer">
+    <EntitySet Name="Affix" EntityType="Self.Affix" store:Type="Tables" />
+    <EntitySet Name="Contact" EntityType="Self.Contact" store:Type="Tables" />
+    <EntitySet Name="QQFriend" EntityType="Self.QQFriend" store:Type="Tables" />
+    <EntitySet Name="QQGroup" EntityType="Self.QQGroup" store:Type="Tables" />
+    <EntitySet Name="Sms" EntityType="Self.Sms" store:Type="Tables" />
+    <EntitySet Name="WA_MFORENSICS_010400" EntityType="Self.WA_MFORENSICS_010400" store:Type="Tables" />
+    <EntitySet Name="WA_MFORENSICS_010500" EntityType="Self.WA_MFORENSICS_010500" store:Type="Tables" />
+    <EntitySet Name="WA_MFORENSICS_010700" EntityType="Self.WA_MFORENSICS_010700" store:Type="Tables" />
+    <EntitySet Name="WA_MFORENSICS_020400" EntityType="Self.WA_MFORENSICS_020400" store:Type="Tables" />
+    <EntitySet Name="WA_MFORENSICS_020500" EntityType="Self.WA_MFORENSICS_020500" store:Type="Tables" />
+    <EntitySet Name="WA_MFORENSICS_020600" EntityType="Self.WA_MFORENSICS_020600" store:Type="Tables" />
+    <EntitySet Name="WXFriend" EntityType="Self.WXFriend" store:Type="Tables" />
+    <EntitySet Name="WXGroup" EntityType="Self.WXGroup" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

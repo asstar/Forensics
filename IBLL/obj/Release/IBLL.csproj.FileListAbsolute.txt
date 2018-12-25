@@ -1,0 +1,9 @@
+E:\开发\Forensics\IBLL\bin\Release\IBLL.dll
+E:\开发\Forensics\IBLL\bin\Release\IBLL.pdb
+E:\开发\Forensics\IBLL\bin\Release\Model.dll
+E:\开发\Forensics\IBLL\bin\Release\EntityFramework.dll
+E:\开发\Forensics\IBLL\bin\Release\Model.pdb
+E:\开发\Forensics\IBLL\bin\Release\EntityFramework.xml
+E:\开发\Forensics\IBLL\obj\Release\IBLL.csprojResolveAssemblyReference.cache
+E:\开发\Forensics\IBLL\obj\Release\IBLL.dll
+E:\开发\Forensics\IBLL\obj\Release\IBLL.pdb

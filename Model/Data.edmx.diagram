@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="edf619a21b62404d9f3aceafd3bce7b8" Name="Diagram1">
+        <EntityTypeShape EntityType="Model.Affix" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Area" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Chat" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.Contact" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="Model.Friend" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.GroupChat" Width="1.5" PointX="4.75" PointY="5.75" />
+        <EntityTypeShape EntityType="Model.GroupFriend" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Info" Width="1.5" PointX="6.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.Sms" Width="1.5" PointX="6.75" PointY="7.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_010100" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_010200" Width="1.5" PointX="0.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_010202" Width="1.5" PointX="8.75" PointY="9.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_010300" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_010400" Width="1.5" PointX="2.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_010500" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_010700" Width="1.5" PointX="10.75" PointY="8.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_020100" Width="1.5" PointX="4.75" PointY="11.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_020200" Width="1.5" PointX="12.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_020300" Width="1.5" PointX="12.75" PointY="10.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_020400" Width="1.5" PointX="6.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_020500" Width="1.5" PointX="8.75" PointY="13.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_020600" Width="1.5" PointX="14.75" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_020700" Width="1.5" PointX="0.75" PointY="14.75" />
+        <EntityTypeShape EntityType="Model.WA_MFORENSICS_090400" Width="1.5" PointX="14.75" PointY="6.75" />
+        <EntityTypeShape EntityType="Model.Zone" Width="1.5" PointX="14.75" PointY="10.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

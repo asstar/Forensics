@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Z.EntityFramework.Extensions</id>
+    <version>3.16.15</version>
+    <title>Z.EntityFramework.Extensions</title>
+    <authors>ZZZ Projects</authors>
+    <owners>ZZZ Projects</owners>
+    <licenseUrl>https://zzzprojects.com/license-agreement/</licenseUrl>
+    <projectUrl>https://entityframework-extensions.net/?z=nuget</projectUrl>
+    <iconUrl>https://zzzprojects.github.io/images/logo/logo-64.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Entity Framework Extensions extends your DbContext with high-performance bulk operations: BulkSaveChanges, BulkInsert, BulkUpdate, BulkDelete, BulkMerge, and more.
+
+Example: https://dotnetfiddle.net/awlJdf
+Benchmark: https://dotnetfiddle.net/35mQ0W
+
+Include free and prime features.</description>
+    <summary>Entity Framework Extensions extends your DbContext with high-performance bulk operations: BulkSaveChanges, BulkInsert, BulkUpdate, BulkDelete, BulkMerge, and more.</summary>
+    <copyright>Copyright © ZZZ Projects Inc.</copyright>
+    <tags>EF6 EF EntityFramework Bulk BulkCopy SqlBulkCopy BulkInsert</tags>
+    <dependencies>
+      <dependency id="EntityFramework" version="6.0.0" />
+    </dependencies>
+  </metadata>
+</package>

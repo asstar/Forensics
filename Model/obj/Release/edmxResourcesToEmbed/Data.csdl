@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="DBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Affix" EntityType="Model.Affix" />
+    <EntitySet Name="Contact" EntityType="Model.Contact" />
+    <EntitySet Name="QQFriend" EntityType="Model.QQFriend" />
+    <EntitySet Name="QQGroup" EntityType="Model.QQGroup" />
+    <EntitySet Name="Sms" EntityType="Model.Sms" />
+    <EntitySet Name="WA_MFORENSICS_010400" EntityType="Model.WA_MFORENSICS_010400" />
+    <EntitySet Name="WA_MFORENSICS_010500" EntityType="Model.WA_MFORENSICS_010500" />
+    <EntitySet Name="WA_MFORENSICS_010700" EntityType="Model.WA_MFORENSICS_010700" />
+    <EntitySet Name="WA_MFORENSICS_020400" EntityType="Model.WA_MFORENSICS_020400" />
+    <EntitySet Name="WA_MFORENSICS_020500" EntityType="Model.WA_MFORENSICS_020500" />
+    <EntitySet Name="WA_MFORENSICS_020600" EntityType="Model.WA_MFORENSICS_020600" />
+    <EntitySet Name="WXFriend" EntityType="Model.WXFriend" />
+    <EntitySet Name="WXGroup" EntityType="Model.WXGroup" />
+  </EntityContainer>
+  <EntityType Name="Affix">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="Binary" MaxLength="2147483647" FixedLength="false" />
+    <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Contact">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Seq" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QQFriend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendAccount" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendNickName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SendTime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Count" Type="Int64" />
+    <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="QQGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GroupNum" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GroupName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendAccount" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendNickName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SendTime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Count" Type="Int64" />
+    <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Affix" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Sms">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SendTime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Count" Type="Int64" />
+    <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_010400">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COLLECT_TARGET_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SEQUENCE_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="RELATIONSHIP_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="PRIVACYCONFIG" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_STATUS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_010500">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COLLECT_TARGET_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SEQUENCE_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_VALUE_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE_NUMBER_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="RELATIONSHIP_ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_STATUS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_010700">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COLLECT_TARGET_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MSISDN" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="RELATIONSHIP_ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="RELATIONSHIP_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LOCAL_ACTION" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL_SEND_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CONTENT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL_VIEW_STATUS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL_SAVE_FOLDER" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="PRIVACYCONFIG" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_STATUS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="INTERCEPT_STATE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_020400">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COLLECT_TARGET_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_ACCOUNT_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GROUP_NUM" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_NICKNAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_REMARK" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="AREA" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CITY_CODE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FIXED_PHONE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MSISDN" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="EMAIL_ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CERTIFICATE_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CERTIFICATE_CODE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SEXCODE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="AGE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="POSTAL_ADDRESS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="POSTAL_CODE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="OCCUPATION_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="BLOOD_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SIGN_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="PERSONAL_DESC" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="REG_CITY" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GRADUATESCHOOL" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ZODIAC" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CONSTALLATION" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="BIRTHDAY" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_STATUS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="USER_PHOTO" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_REG_DATE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_LOGIN_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LATEST_MOD_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LAST_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_020500">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COLLECT_TARGET_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_ACCOUNT_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="REGIS_NICKNAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_NICKNAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CONTENT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL_SEND_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LOCAL_ACTION" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="TALK_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_STATUS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MAINFILE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MEDIA_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CITY_CODE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_ADDRESS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LATITUDE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ABOVE_SEALEVEL" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WA_MFORENSICS_020600">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COLLECT_TARGET_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACT_ACCOUNT_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GROUP_NUM" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GROUP_NAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_ACCOUNT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FRIEND_NICKNAME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CONTENT" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MAIL_SEND_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LOCAL_ACTION" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="TALK_ID" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_STATUS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DELETE_TIME" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MAINFILE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="MEDIA_TYPE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="CITY_CODE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANY_ADDRESS" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LONGITUDE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="LATITUDE" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="ABOVE_SEALEVEL" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WXFriend">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="NickName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendAccount" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendNickName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SendTime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Count" Type="Int64" />
+    <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Affix" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WXGroup">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="String" Nullable="false" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Account" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GroupNum" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="GroupName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendAccount" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="FriendNickName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Content" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="SendTime" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Direction" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Count" Type="Int64" />
+    <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+    <Property Name="Affix" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

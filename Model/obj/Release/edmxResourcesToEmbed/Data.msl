@@ -1,0 +1,265 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelStoreContainer" CdmEntityContainer="DBEntities">
+    <EntitySetMapping Name="Affix">
+      <EntityTypeMapping TypeName="Model.Affix">
+        <MappingFragment StoreEntitySet="Affix">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contact">
+      <EntityTypeMapping TypeName="Model.Contact">
+        <MappingFragment StoreEntitySet="Contact">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Seq" ColumnName="Seq" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QQFriend">
+      <EntityTypeMapping TypeName="Model.QQFriend">
+        <MappingFragment StoreEntitySet="QQFriend">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="FriendNickName" ColumnName="FriendNickName" />
+          <ScalarProperty Name="FriendAccount" ColumnName="FriendAccount" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QQGroup">
+      <EntityTypeMapping TypeName="Model.QQGroup">
+        <MappingFragment StoreEntitySet="QQGroup">
+          <ScalarProperty Name="Affix" ColumnName="Affix" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="FriendNickName" ColumnName="FriendNickName" />
+          <ScalarProperty Name="FriendAccount" ColumnName="FriendAccount" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupNum" ColumnName="GroupNum" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sms">
+      <EntityTypeMapping TypeName="Model.Sms">
+        <MappingFragment StoreEntitySet="Sms">
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WA_MFORENSICS_010400">
+      <EntityTypeMapping TypeName="Model.WA_MFORENSICS_010400">
+        <MappingFragment StoreEntitySet="WA_MFORENSICS_010400">
+          <ScalarProperty Name="DELETE_TIME" ColumnName="DELETE_TIME" />
+          <ScalarProperty Name="DELETE_STATUS" ColumnName="DELETE_STATUS" />
+          <ScalarProperty Name="PRIVACYCONFIG" ColumnName="PRIVACYCONFIG" />
+          <ScalarProperty Name="RELATIONSHIP_NAME" ColumnName="RELATIONSHIP_NAME" />
+          <ScalarProperty Name="SEQUENCE_NAME" ColumnName="SEQUENCE_NAME" />
+          <ScalarProperty Name="COLLECT_TARGET_ID" ColumnName="COLLECT_TARGET_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WA_MFORENSICS_010500">
+      <EntityTypeMapping TypeName="Model.WA_MFORENSICS_010500">
+        <MappingFragment StoreEntitySet="WA_MFORENSICS_010500">
+          <ScalarProperty Name="DELETE_TIME" ColumnName="DELETE_TIME" />
+          <ScalarProperty Name="DELETE_STATUS" ColumnName="DELETE_STATUS" />
+          <ScalarProperty Name="RELATIONSHIP_ACCOUNT" ColumnName="RELATIONSHIP_ACCOUNT" />
+          <ScalarProperty Name="PHONE_NUMBER_TYPE" ColumnName="PHONE_NUMBER_TYPE" />
+          <ScalarProperty Name="PHONE_VALUE_TYPE" ColumnName="PHONE_VALUE_TYPE" />
+          <ScalarProperty Name="SEQUENCE_NAME" ColumnName="SEQUENCE_NAME" />
+          <ScalarProperty Name="COLLECT_TARGET_ID" ColumnName="COLLECT_TARGET_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WA_MFORENSICS_010700">
+      <EntityTypeMapping TypeName="Model.WA_MFORENSICS_010700">
+        <MappingFragment StoreEntitySet="WA_MFORENSICS_010700">
+          <ScalarProperty Name="INTERCEPT_STATE" ColumnName="INTERCEPT_STATE" />
+          <ScalarProperty Name="DELETE_TIME" ColumnName="DELETE_TIME" />
+          <ScalarProperty Name="DELETE_STATUS" ColumnName="DELETE_STATUS" />
+          <ScalarProperty Name="PRIVACYCONFIG" ColumnName="PRIVACYCONFIG" />
+          <ScalarProperty Name="MAIL_SAVE_FOLDER" ColumnName="MAIL_SAVE_FOLDER" />
+          <ScalarProperty Name="MAIL_VIEW_STATUS" ColumnName="MAIL_VIEW_STATUS" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="MAIL_SEND_TIME" ColumnName="MAIL_SEND_TIME" />
+          <ScalarProperty Name="LOCAL_ACTION" ColumnName="LOCAL_ACTION" />
+          <ScalarProperty Name="RELATIONSHIP_NAME" ColumnName="RELATIONSHIP_NAME" />
+          <ScalarProperty Name="RELATIONSHIP_ACCOUNT" ColumnName="RELATIONSHIP_ACCOUNT" />
+          <ScalarProperty Name="MSISDN" ColumnName="MSISDN" />
+          <ScalarProperty Name="COLLECT_TARGET_ID" ColumnName="COLLECT_TARGET_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WA_MFORENSICS_020400">
+      <EntityTypeMapping TypeName="Model.WA_MFORENSICS_020400">
+        <MappingFragment StoreEntitySet="WA_MFORENSICS_020400">
+          <ScalarProperty Name="LAST_TIME" ColumnName="LAST_TIME" />
+          <ScalarProperty Name="LATEST_MOD_TIME" ColumnName="LATEST_MOD_TIME" />
+          <ScalarProperty Name="LAST_LOGIN_TIME" ColumnName="LAST_LOGIN_TIME" />
+          <ScalarProperty Name="ACCOUNT_REG_DATE" ColumnName="ACCOUNT_REG_DATE" />
+          <ScalarProperty Name="USER_PHOTO" ColumnName="USER_PHOTO" />
+          <ScalarProperty Name="DELETE_TIME" ColumnName="DELETE_TIME" />
+          <ScalarProperty Name="DELETE_STATUS" ColumnName="DELETE_STATUS" />
+          <ScalarProperty Name="BIRTHDAY" ColumnName="BIRTHDAY" />
+          <ScalarProperty Name="CONSTALLATION" ColumnName="CONSTALLATION" />
+          <ScalarProperty Name="ZODIAC" ColumnName="ZODIAC" />
+          <ScalarProperty Name="GRADUATESCHOOL" ColumnName="GRADUATESCHOOL" />
+          <ScalarProperty Name="REG_CITY" ColumnName="REG_CITY" />
+          <ScalarProperty Name="PERSONAL_DESC" ColumnName="PERSONAL_DESC" />
+          <ScalarProperty Name="SIGN_NAME" ColumnName="SIGN_NAME" />
+          <ScalarProperty Name="NAME" ColumnName="NAME" />
+          <ScalarProperty Name="BLOOD_TYPE" ColumnName="BLOOD_TYPE" />
+          <ScalarProperty Name="OCCUPATION_NAME" ColumnName="OCCUPATION_NAME" />
+          <ScalarProperty Name="POSTAL_CODE" ColumnName="POSTAL_CODE" />
+          <ScalarProperty Name="POSTAL_ADDRESS" ColumnName="POSTAL_ADDRESS" />
+          <ScalarProperty Name="AGE" ColumnName="AGE" />
+          <ScalarProperty Name="SEXCODE" ColumnName="SEXCODE" />
+          <ScalarProperty Name="CERTIFICATE_CODE" ColumnName="CERTIFICATE_CODE" />
+          <ScalarProperty Name="CERTIFICATE_TYPE" ColumnName="CERTIFICATE_TYPE" />
+          <ScalarProperty Name="EMAIL_ACCOUNT" ColumnName="EMAIL_ACCOUNT" />
+          <ScalarProperty Name="MSISDN" ColumnName="MSISDN" />
+          <ScalarProperty Name="FIXED_PHONE" ColumnName="FIXED_PHONE" />
+          <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+          <ScalarProperty Name="AREA" ColumnName="AREA" />
+          <ScalarProperty Name="FRIEND_REMARK" ColumnName="FRIEND_REMARK" />
+          <ScalarProperty Name="FRIEND_NICKNAME" ColumnName="FRIEND_NICKNAME" />
+          <ScalarProperty Name="FRIEND_ACCOUNT" ColumnName="FRIEND_ACCOUNT" />
+          <ScalarProperty Name="FRIEND_ID" ColumnName="FRIEND_ID" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="GROUP_NUM" ColumnName="GROUP_NUM" />
+          <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+          <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+          <ScalarProperty Name="CONTACT_ACCOUNT_TYPE" ColumnName="CONTACT_ACCOUNT_TYPE" />
+          <ScalarProperty Name="COLLECT_TARGET_ID" ColumnName="COLLECT_TARGET_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WA_MFORENSICS_020500">
+      <EntityTypeMapping TypeName="Model.WA_MFORENSICS_020500">
+        <MappingFragment StoreEntitySet="WA_MFORENSICS_020500">
+          <ScalarProperty Name="ABOVE_SEALEVEL" ColumnName="ABOVE_SEALEVEL" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="COMPANY_ADDRESS" ColumnName="COMPANY_ADDRESS" />
+          <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+          <ScalarProperty Name="MEDIA_TYPE" ColumnName="MEDIA_TYPE" />
+          <ScalarProperty Name="MAINFILE" ColumnName="MAINFILE" />
+          <ScalarProperty Name="DELETE_TIME" ColumnName="DELETE_TIME" />
+          <ScalarProperty Name="DELETE_STATUS" ColumnName="DELETE_STATUS" />
+          <ScalarProperty Name="TALK_ID" ColumnName="TALK_ID" />
+          <ScalarProperty Name="LOCAL_ACTION" ColumnName="LOCAL_ACTION" />
+          <ScalarProperty Name="MAIL_SEND_TIME" ColumnName="MAIL_SEND_TIME" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="FRIEND_NICKNAME" ColumnName="FRIEND_NICKNAME" />
+          <ScalarProperty Name="FRIEND_ACCOUNT" ColumnName="FRIEND_ACCOUNT" />
+          <ScalarProperty Name="FRIEND_ID" ColumnName="FRIEND_ID" />
+          <ScalarProperty Name="REGIS_NICKNAME" ColumnName="REGIS_NICKNAME" />
+          <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+          <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+          <ScalarProperty Name="CONTACT_ACCOUNT_TYPE" ColumnName="CONTACT_ACCOUNT_TYPE" />
+          <ScalarProperty Name="COLLECT_TARGET_ID" ColumnName="COLLECT_TARGET_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WA_MFORENSICS_020600">
+      <EntityTypeMapping TypeName="Model.WA_MFORENSICS_020600">
+        <MappingFragment StoreEntitySet="WA_MFORENSICS_020600">
+          <ScalarProperty Name="ABOVE_SEALEVEL" ColumnName="ABOVE_SEALEVEL" />
+          <ScalarProperty Name="LATITUDE" ColumnName="LATITUDE" />
+          <ScalarProperty Name="LONGITUDE" ColumnName="LONGITUDE" />
+          <ScalarProperty Name="COMPANY_ADDRESS" ColumnName="COMPANY_ADDRESS" />
+          <ScalarProperty Name="CITY_CODE" ColumnName="CITY_CODE" />
+          <ScalarProperty Name="MEDIA_TYPE" ColumnName="MEDIA_TYPE" />
+          <ScalarProperty Name="MAINFILE" ColumnName="MAINFILE" />
+          <ScalarProperty Name="DELETE_TIME" ColumnName="DELETE_TIME" />
+          <ScalarProperty Name="DELETE_STATUS" ColumnName="DELETE_STATUS" />
+          <ScalarProperty Name="TALK_ID" ColumnName="TALK_ID" />
+          <ScalarProperty Name="LOCAL_ACTION" ColumnName="LOCAL_ACTION" />
+          <ScalarProperty Name="MAIL_SEND_TIME" ColumnName="MAIL_SEND_TIME" />
+          <ScalarProperty Name="CONTENT" ColumnName="CONTENT" />
+          <ScalarProperty Name="FRIEND_NICKNAME" ColumnName="FRIEND_NICKNAME" />
+          <ScalarProperty Name="FRIEND_ACCOUNT" ColumnName="FRIEND_ACCOUNT" />
+          <ScalarProperty Name="FRIEND_ID" ColumnName="FRIEND_ID" />
+          <ScalarProperty Name="GROUP_NAME" ColumnName="GROUP_NAME" />
+          <ScalarProperty Name="GROUP_NUM" ColumnName="GROUP_NUM" />
+          <ScalarProperty Name="ACCOUNT" ColumnName="ACCOUNT" />
+          <ScalarProperty Name="ACCOUNT_ID" ColumnName="ACCOUNT_ID" />
+          <ScalarProperty Name="CONTACT_ACCOUNT_TYPE" ColumnName="CONTACT_ACCOUNT_TYPE" />
+          <ScalarProperty Name="COLLECT_TARGET_ID" ColumnName="COLLECT_TARGET_ID" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WXFriend">
+      <EntityTypeMapping TypeName="Model.WXFriend">
+        <MappingFragment StoreEntitySet="WXFriend">
+          <ScalarProperty Name="Affix" ColumnName="Affix" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="FriendNickName" ColumnName="FriendNickName" />
+          <ScalarProperty Name="FriendAccount" ColumnName="FriendAccount" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WXGroup">
+      <EntityTypeMapping TypeName="Model.WXGroup">
+        <MappingFragment StoreEntitySet="WXGroup">
+          <ScalarProperty Name="Affix" ColumnName="Affix" />
+          <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
+          <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
+          <ScalarProperty Name="Direction" ColumnName="Direction" />
+          <ScalarProperty Name="SendTime" ColumnName="SendTime" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="FriendNickName" ColumnName="FriendNickName" />
+          <ScalarProperty Name="FriendAccount" ColumnName="FriendAccount" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+          <ScalarProperty Name="GroupNum" ColumnName="GroupNum" />
+          <ScalarProperty Name="Account" ColumnName="Account" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
