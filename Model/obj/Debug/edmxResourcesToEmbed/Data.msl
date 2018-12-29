@@ -62,7 +62,7 @@
       <EntityTypeMapping TypeName="Model.Friend">
         <MappingFragment StoreEntitySet="Friend">
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="ChatCount" ColumnName="ChatCount" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="Phone" ColumnName="Phone" />
@@ -103,7 +103,7 @@
       <EntityTypeMapping TypeName="Model.GroupFriend">
         <MappingFragment StoreEntitySet="GroupFriend">
           <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-          <ScalarProperty Name="ChatCount" ColumnName="ChatCount" />
+          <ScalarProperty Name="Count" ColumnName="Count" />
           <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
           <ScalarProperty Name="GroupName" ColumnName="GroupName" />
           <ScalarProperty Name="GroupNum" ColumnName="GroupNum" />

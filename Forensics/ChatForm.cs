@@ -41,35 +41,42 @@ namespace Forensics
         {
             LoadDetailData();
         }
+        FriendBLL friendBLL = new FriendBLL();
         void LoadMasterData()
         {
             int count;
-            List<Chat> result;
+            List<Friend> result;
             if (keyword == null || keyword == "")
             {
-                result = wxFriendBLL.SqlQuery("select * from Chat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='"+StateInfo.Account+"' group by FriendAccount order by count desc").ToList();
+                //result = wxFriendBLL.SqlQuery("select * from Chat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND TargetID='" + StateInfo.CaseID + "'  group by FriendAccount order by count desc").ToList();
+                result = friendBLL.SqlQuery("select * from Friend  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND TargetID='" + StateInfo.CaseID + "' And Count>0   order by count desc").ToList();
             }
             else
             {
-                result = wxFriendBLL.SqlQuery("select * from Chat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND (Content Like '%" + keyword + "%' OR FriendAccount Like '%" + keyword + "%') group by FriendAccount order by count desc").ToList();
+                result = friendBLL.SqlQuery("Select Friend.* from Chat,Friend where Chat.IsDeleted<>'1' AND Chat.AccountType='" + StateInfo.ChatType + "' And Chat.Account='" + StateInfo.Account + "' AND Chat.TargetID='" + StateInfo.CaseID + "' And Friend.Count>0  And (Content Like '%" + keyword + "%' OR Friend.FriendAccount Like '%" + keyword + "%')  And Friend.FriendAccount=chat.FriendAccount group by Friend.FriendAccount order by Friend.count desc").ToList();
+                //result = wxFriendBLL.SqlQuery("select * from Chat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND (Content Like '%" + keyword + "%' OR FriendAccount Like '%" + keyword + "%') AND TargetID='" + StateInfo.CaseID + "'  group by FriendAccount order by count desc").ToList();
             }
             count = result.Count();
             var display = result.Skip((pager1.PageIndex - 1) * pager1.PageSize).Take(pager1.PageSize);
             pager1.DrawControl(count);
             DGVMaster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            var temp = ListToDatatableHelper.ToDataTable<Chat>(display.ToList());
+            var temp = ListToDatatableHelper.ToDataTable<Friend>(display.ToList());
 
             DGVMaster.DataSource = temp;
-            temp.Columns["NickName"].ColumnName = "昵称";
+            temp.Columns["Account"].ColumnName = "账号";
             temp.Columns["FriendNickName"].ColumnName = "对方昵称";
+            temp.Columns["FriendAccount"].ColumnName = "对方账号";
             temp.Columns["Count"].ColumnName = "数量";
             for (int i = 0; i < DGVMaster.Columns.Count; i++)
             {
                 DGVMaster.Columns[i].Visible = false;
             }
-            DGVMaster.Columns["昵称"].Visible = true;
+            DGVMaster.Columns["账号"].Visible = true;
             DGVMaster.Columns["对方昵称"].Visible = true;
+            DGVMaster.Columns["对方账号"].Visible = true;
             DGVMaster.Columns["数量"].Visible = true;
+            DGVMaster.Columns["账号"].FillWeight = 30;
+            DGVMaster.Columns["数量"].FillWeight = 30;
             //DGVMaster.Columns["昵称"].Width = 120;
             //DGVMaster.Columns["对方昵称"].Width = 400;
             //DGVMaster.Columns["数量"].Width = 60;
@@ -81,7 +88,7 @@ namespace Forensics
             List<Chat> result;
             if (keyword == null || keyword == "")
             {
-                result = wxFriendBLL.SqlQuery("Select * From Chat where FriendAccount='" + friendAccount + "'  AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' And IsDeleted<>'1'  Group By SendTime Order By SendTime").ToList();
+                result = wxFriendBLL.SqlQuery("Select * From Chat where FriendAccount='" + friendAccount + "'  AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' And IsDeleted<>'1' Group By SendTime Order By SendTime").ToList();
             }
             else
             {
@@ -105,7 +112,7 @@ namespace Forensics
             temp.Columns["SendTime"].ColumnName = "收发时间";
             temp.Columns["Direction"].ColumnName = "收发方向";
 
-            for (int i = 0; i < DGVMaster.Columns.Count; i++)
+            for (int i = 0; i < DGVDetail.Columns.Count; i++)
             {
                 DGVDetail.Columns[i].Visible = false;
             }
@@ -140,8 +147,8 @@ namespace Forensics
         private string friendAccount;
         private void DGVMaster_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            Console.WriteLine(this.DGVMaster.CurrentRow.Cells["FriendAccount"].Value.ToString());
-            friendAccount = this.DGVMaster.CurrentRow.Cells["FriendAccount"].Value.ToString();
+            Console.WriteLine(this.DGVMaster.CurrentRow.Cells["对方账号"].Value.ToString());
+            friendAccount = this.DGVMaster.CurrentRow.Cells["对方账号"].Value.ToString();
             pager2.PageIndex = 1;
             pager2.PageSize = 25;
             LoadDetailData();

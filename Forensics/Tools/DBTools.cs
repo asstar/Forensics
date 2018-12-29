@@ -54,6 +54,14 @@ namespace Forensics.Tools
         {
             new SQLiteHelper().ExecuteNonQuery("Delete From " + tableName);
         }
+        public static void DeleteWACase(string tableName)
+        {
+            new SQLiteHelper().ExecuteNonQuery("Delete From " + tableName + " Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "'");
+        }
+        public static void DeleteCase(string tableName)
+        {
+            new SQLiteHelper().ExecuteNonQuery("Delete From " + tableName + " Where TargetID='" + StateInfo.CaseID + "'");
+        }
         public static void Zip()
         {
             new SQLiteHelper().ExecuteNonQuery("vacuum");

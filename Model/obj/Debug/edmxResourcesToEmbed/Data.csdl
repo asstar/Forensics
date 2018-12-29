@@ -96,7 +96,7 @@
     <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Name="ChatCount" Type="Int64" />
+    <Property Name="Count" Type="Int64" />
     <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="GroupChat">
@@ -131,7 +131,7 @@
     <Property Name="GroupNum" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="GroupName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
     <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-    <Property Name="ChatCount" Type="Int64" />
+    <Property Name="Count" Type="Int64" />
     <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Info">

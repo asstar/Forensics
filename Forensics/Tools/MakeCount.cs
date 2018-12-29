@@ -11,13 +11,13 @@ namespace Forensics.Tools
     {
         ContactBLL contactBLL = new ContactBLL();
         SmsBLL smsBLL = new SmsBLL();
-        ChatBLL wxFriendBLL = new ChatBLL();
-        GroupChatBLL wxGroupBLL = new GroupChatBLL();
-        GroupChatBLL qqGroupBLL = new GroupChatBLL();
-        ChatBLL qqFriendBLL = new ChatBLL();
+        ChatBLL chatBLL = new ChatBLL();
+        GroupChatBLL groupBLL = new GroupChatBLL();
+        GroupFriendBLL groupFriendBLL = new GroupFriendBLL();
+        FriendBLL friendBLL = new FriendBLL();
         public void MakeSmsCount()
         {
-            var result = smsBLL.SqlQuery("select * from sms where IsDeleted<>'1' group by name order by id").ToList();
+            var result = smsBLL.SqlQuery("select * from sms where IsDeleted<>'1' AND TargetID='" + StateInfo.CaseID + "' group by name order by id").ToList();
             var list = smsBLL.SqlQuery("select * from Sms where IsDeleted<>'1'").ToList();
             for (int i = 0; i < result.Count(); i++)
             {
@@ -28,24 +28,24 @@ namespace Forensics.Tools
         }
         public void MakeChatCount()
         {
-            var result = wxFriendBLL.SqlQuery("select * from Chat where IsDeleted<>'1'  group by FriendAccount order by id").ToList();
-            var list = wxFriendBLL.SqlQuery("select * from Chat where IsDeleted<>'1'").ToList();
+            var result = friendBLL.SqlQuery("select * from Friend where IsDeleted<>'1' AND TargetID='" + StateInfo.CaseID + "' order by id").ToList();
+            var list = chatBLL.SqlQuery("select * from Chat where IsDeleted<>'1'").ToList();
             for (int i = 0; i < result.Count(); i++)
             {
                 int count = list.Count(x => x.FriendAccount == result[i].FriendAccount);
-                wxFriendBLL.SqlCommand("Update Chat set Count=" + count + " Where FriendAccount='" + result[i].FriendAccount + "' And IsDeleted<>'1'");
+                friendBLL.SqlCommand("Update Friend set Count=" + count + " Where FriendAccount='" + result[i].FriendAccount + "' And IsDeleted<>'1'");
 
             }
         }
 
         public void MakeGroupChatCount()
         {
-            var result = wxGroupBLL.SqlQuery("select * from GroupChat where IsDeleted<>'1'  group by GroupNum order by id").ToList();
-            var list = wxGroupBLL.SqlQuery("select * from GroupChat where IsDeleted<>'1'").ToList();
+            var result = groupFriendBLL.SqlQuery("select * from GroupFriend where IsDeleted<>'1' AND TargetID='" + StateInfo.CaseID + "' order by id").ToList();
+            var list = groupBLL.SqlQuery("select * from GroupChat where IsDeleted<>'1'").ToList();
             for (int i = 0; i < result.Count(); i++)
             {
                 int count = list.Count(x => x.GroupNum == result[i].GroupNum);
-                wxGroupBLL.SqlCommand("Update GroupChat set Count=" + count + " Where GroupNum='" + result[i].GroupNum + "'  And IsDeleted<>'1' ");
+                groupFriendBLL.SqlCommand("Update GroupFriend set Count=" + count + " Where GroupNum='" + result[i].GroupNum + "'  And IsDeleted<>'1' ");
             }
         }
 

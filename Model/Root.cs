@@ -12,9 +12,8 @@ namespace Data.Entity
     {
         public List<Contact> contactList { get; set; }
         public List<Sms> smsList { get; set; }
-        public List<Chat> wxFriendList { get; set; }
-        public List<GroupChat> wxGroupList { get; set; }
-        public List<Chat> qqFriendList { get; set; }
-        public List<GroupChat> qqGroupList { get; set; }
+        public List<Chat> chatList { get; set; }
+        public List<GroupChat> groupChatList { get; set; }
+
     }
 }

@@ -26,7 +26,7 @@ namespace Model
         public string Phone { get; set; }
         public string Email { get; set; }
         public string DeleteStatus { get; set; }
-        public Nullable<long> ChatCount { get; set; }
+        public Nullable<long> Count { get; set; }
         public string IsDeleted { get; set; }
     }
 }

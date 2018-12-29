@@ -22,7 +22,7 @@ namespace Model
         public string GroupNum { get; set; }
         public string GroupName { get; set; }
         public string DeleteStatus { get; set; }
-        public Nullable<long> ChatCount { get; set; }
+        public Nullable<long> Count { get; set; }
         public string IsDeleted { get; set; }
     }
 }

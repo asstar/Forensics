@@ -83,7 +83,7 @@ namespace Forensics
             tvList.Nodes.Clear();
             tvList.ImageIndex = 4;
             tvList.SelectedImageIndex = 4;
-            var root = new WA_MFORENSICS_010200BLL().GetAll().FirstOrDefault();
+            var root = new WA_MFORENSICS_010200BLL().SqlQuery("Select * From WA_MFORENSICS_010200 where COLLECT_TARGET_ID='" + StateInfo.CaseID + "'").ToList().FirstOrDefault();//.GetAll().FirstOrDefault();
             
             if (root != null)
             {
@@ -99,8 +99,8 @@ namespace Forensics
                 rootNode.Nodes.Add(wxNode);
                 rootNode.Nodes.Add(qqNode);
 
-                var wxQuery = new WA_MFORENSICS_020100BLL().SqlQuery("Select * From WA_MFORENSICS_020100 Where CONTACT_ACCOUNT_TYPE='1030036' Group by Account");
-                var qqQuery = new WA_MFORENSICS_020100BLL().SqlQuery("Select * From WA_MFORENSICS_020100 Where CONTACT_ACCOUNT_TYPE='1030001' Group by Account");
+                var wxQuery = new WA_MFORENSICS_020100BLL().SqlQuery("Select * From WA_MFORENSICS_020100 Where CONTACT_ACCOUNT_TYPE='1030036' AND COLLECT_TARGET_ID='"+StateInfo.CaseID+"' Group by Account");
+                var qqQuery = new WA_MFORENSICS_020100BLL().SqlQuery("Select * From WA_MFORENSICS_020100 Where CONTACT_ACCOUNT_TYPE='1030001' AND COLLECT_TARGET_ID='" + StateInfo.CaseID + "' Group by Account");
 
                 foreach (var i in wxQuery)
                 {
@@ -136,14 +136,21 @@ namespace Forensics
             }
             CreateForm.FormOper.AddTabpage(xtcMain, title, title, formName);
         }
+
+        public void clearTab()
+        {
+            //XTCMain.TabPages.Remove
+            int tabCount = this.xtcMain.TabPages.Count;
+            for (int i = tabCount - 1; i >= 0; i--)
+            {
+                this.xtcMain.TabPages.RemoveAt(i);
+            }
+        }
         
         private void DataForm_Load(object sender, EventArgs e)
         {
 
             setTree();
-
-
-
         }
     }
 }

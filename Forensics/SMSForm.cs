@@ -47,11 +47,11 @@ namespace Forensics
             List<Sms> result;
             if (keyword == null || keyword == "")
             {
-                result = smsBLL.SqlQuery("select * from sms  where IsDeleted<>'1' group by name order by count desc").ToList();
+                result = smsBLL.SqlQuery("select * from sms  where IsDeleted<>'1' AND TargetID='" + StateInfo.CaseID + "' group by name order by count desc").ToList();
             }
             else
             {
-                result = smsBLL.SqlQuery("select * from sms  where IsDeleted<>'1' AND (Content Like '%" + keyword + "%' OR Name Like '%" + keyword + "%') group by name order by count desc").ToList();
+                result = smsBLL.SqlQuery("select * from sms  where IsDeleted<>'1' AND (Content Like '%" + keyword + "%' OR Name Like '%" + keyword + "%') AND TargetID='" + StateInfo.CaseID + "' group by name order by count desc").ToList();
             }
             count = result.Count();
             var display = result.Skip((pager1.PageIndex - 1) * pager1.PageSize).Take(pager1.PageSize);

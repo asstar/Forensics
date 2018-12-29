@@ -21,8 +21,8 @@ namespace Forensics.Tools
         AffixBLL affixBLL = new AffixBLL();
         public void makeContact()
         {
-            List<WA_MFORENSICS_010400> srcList10400 = new WA_MFORENSICS_010400BLL().GetAll().ToList();
-            List<WA_MFORENSICS_010500> srcList10500 = new WA_MFORENSICS_010500BLL().GetAll().ToList();
+            List<WA_MFORENSICS_010400> srcList10400 = new WA_MFORENSICS_010400BLL().SqlQuery("Select * From WA_MFORENSICS_010400 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
+            List<WA_MFORENSICS_010500> srcList10500 = new WA_MFORENSICS_010500BLL().SqlQuery("Select * From WA_MFORENSICS_010500 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<Contact> destList = new List<Contact>();
             foreach (var i in srcList10400)
             {
@@ -42,14 +42,14 @@ namespace Forensics.Tools
                 }
                 destList.Add(item);
             }
-            contactBLL.SqlCommand("delete from contact");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            contactBLL.SqlCommand("delete from contact Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             contactBLL.BulkAdd(destList);
 
         }
         public void makeSms()
         {
-            List<WA_MFORENSICS_010700> srcList = new WA_MFORENSICS_010700BLL().GetAll().ToList();
+            List<WA_MFORENSICS_010700> srcList = new WA_MFORENSICS_010700BLL().SqlQuery("Select * From WA_MFORENSICS_010700 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<Sms> destList = new List<Sms>();
             foreach (var i in srcList)
             {
@@ -72,13 +72,13 @@ namespace Forensics.Tools
                 item.IsDeleted = "0";
                 destList.Add(item);
             }
-            smsBLL.SqlCommand("delete from Sms");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            smsBLL.SqlCommand("delete from Sms Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             smsBLL.BulkAdd(destList);
         }
         public void makeFriend()
         {
-            List<WA_MFORENSICS_020200> srcList = new WA_MFORENSICS_020200BLL().SqlQuery("Select * From WA_MFORENSICS_020200").ToList();
+            List<WA_MFORENSICS_020200> srcList = new WA_MFORENSICS_020200BLL().SqlQuery("Select * From WA_MFORENSICS_020200 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<Friend> destList = new List<Friend>();
             foreach (var i in srcList)
             {
@@ -104,14 +104,14 @@ namespace Forensics.Tools
                 item.IsDeleted = "0";
                 destList.Add(item);
             }
-            friendBLL.SqlCommand("delete from Friend");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            friendBLL.SqlCommand("delete from Friend Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             friendBLL.BulkAdd(destList);
         }
 
         public void makeGroupFriend()
         {
-            List<WA_MFORENSICS_020300> srcList = new WA_MFORENSICS_020300BLL().SqlQuery("Select * From WA_MFORENSICS_020300").ToList();
+            List<WA_MFORENSICS_020300> srcList = new WA_MFORENSICS_020300BLL().SqlQuery("Select * From WA_MFORENSICS_020300 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<GroupFriend> destList = new List<GroupFriend>();
             foreach (var i in srcList)
             {
@@ -129,13 +129,13 @@ namespace Forensics.Tools
                 item.IsDeleted = "0";
                 destList.Add(item);
             }
-            groupFriendBLL.SqlCommand("delete from GroupFriend");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            groupFriendBLL.SqlCommand("delete from GroupFriend Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             groupFriendBLL.BulkAdd(destList);
         }
         public void makeChat()
         {
-            List<WA_MFORENSICS_020500> srcList = new WA_MFORENSICS_020500BLL().SqlQuery("Select * From WA_MFORENSICS_020500").ToList();
+            List<WA_MFORENSICS_020500> srcList = new WA_MFORENSICS_020500BLL().SqlQuery("Select * From WA_MFORENSICS_020500 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<Chat> destList = new List<Chat>();
             foreach (var i in srcList)
             {
@@ -164,14 +164,14 @@ namespace Forensics.Tools
                 item.IsDeleted = "0";
                 destList.Add(item);
             }
-            chatBLL.SqlCommand("delete from Chat");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            chatBLL.SqlCommand("delete from Chat Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             chatBLL.BulkAdd(destList);
         }
 
         public void makeGroupChat()
         {
-            List<WA_MFORENSICS_020600> srcList = new WA_MFORENSICS_020600BLL().SqlQuery("Select * From WA_MFORENSICS_020600").ToList();
+            List<WA_MFORENSICS_020600> srcList = new WA_MFORENSICS_020600BLL().SqlQuery("Select * From WA_MFORENSICS_020600 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<GroupChat> destList = new List<GroupChat>();
             foreach (var i in srcList)
             {
@@ -235,13 +235,13 @@ namespace Forensics.Tools
                 item.IsDeleted = "0";
                 destList.Add(item);
             }
-            groupChatBLL.SqlCommand("delete from GroupChat");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            groupChatBLL.SqlCommand("delete from GroupChat Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             groupChatBLL.BulkAdd(destList);
         }
         public void makeZone()
         {
-            List<WA_MFORENSICS_020700> srcList = new WA_MFORENSICS_020700BLL().SqlQuery("Select * From WA_MFORENSICS_020700").ToList();
+            List<WA_MFORENSICS_020700> srcList = new WA_MFORENSICS_020700BLL().SqlQuery("Select * From WA_MFORENSICS_020700 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<Zone> destList = new List<Zone>();
             foreach (var i in srcList)
             {
@@ -266,13 +266,13 @@ namespace Forensics.Tools
                 item.IsDeleted = "0";
                 destList.Add(item);
             }
-            zoneBLL.SqlCommand("delete from Zone");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            zoneBLL.SqlCommand("delete from Zone Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             zoneBLL.BulkAdd(destList);
         }
         public void makeAffix()
         {
-            List<WA_MFORENSICS_090400> srcList = new WA_MFORENSICS_090400BLL().SqlQuery("Select * From WA_MFORENSICS_090400").ToList();
+            List<WA_MFORENSICS_090400> srcList = new WA_MFORENSICS_090400BLL().SqlQuery("Select * From WA_MFORENSICS_090400 Where COLLECT_TARGET_ID='" + StateInfo.CaseID + "' ").ToList();
             List<Affix> destList = new List<Affix>();
             foreach (var i in srcList)
             {
@@ -301,8 +301,8 @@ namespace Forensics.Tools
                 item.IsDeleted = "0";
                 destList.Add(item);
             }
-            affixBLL.SqlCommand("delete from Affix");
-            new SQLiteHelper().ExecuteNonQuery("VACUUM");
+            affixBLL.SqlCommand("delete from Affix Where TargetID='" + StateInfo.CaseID + "' ");
+            //new SQLiteHelper().ExecuteNonQuery("VACUUM");
             affixBLL.BulkAdd(destList);
         }
     }

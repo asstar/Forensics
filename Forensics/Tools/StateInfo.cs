@@ -11,5 +11,6 @@ namespace Forensics.Tools
         public static string ChatType { get; set; }
         public static string Account { get; set; }
         public static bool IsLogin { get; set; }
+        public static string CaseID { get; set; }
     }
 }

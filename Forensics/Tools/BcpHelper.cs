@@ -74,6 +74,7 @@ namespace Forensics.Tools
                     dt.Rows.Add(dr);
                 }
             }
+            reader.Close();
             return dt;
         }
         

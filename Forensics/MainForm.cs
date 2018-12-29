@@ -19,8 +19,14 @@ namespace Forensics
             
         }
         public DataForm mdiForm;
+
         private void MainForm_Load(object sender, EventArgs e)
         {
+            string caseID = infoBLL.SqlQuery("Select * from Info Where Key='CaseID'").ToList().FirstOrDefault().Value;
+            if (caseID != null || caseID != "")
+            {
+                StateInfo.CaseID = caseID;
+            }
             mdiForm = new DataForm();
             mdiForm.MdiParent = this;
             mdiForm.Show();
@@ -34,14 +40,11 @@ namespace Forensics
             if (currentLogin == "user")
             {
                 tsmiSetting.Visible = false;
-                tsmiImport.Visible = false;
-                tsmiOutput.Visible = false;
+                tsmiCaseManager.Visible = false;
                 tsmiParser.Visible = false;
                 tsmiFilter.Visible = false;
                 tsmiDelete.Visible = false;
                 tsmiSeperator1.Visible = false;
-                tsmiSeperator2.Visible = false;
-                tsmiSeperator3.Visible = false;
             }
         }
         InfoBLL infoBLL = new InfoBLL();
@@ -50,18 +53,15 @@ namespace Forensics
             About about = new About();
             about.ShowDialog();
         }
-
-        private void tsmiImport_Click(object sender, EventArgs e)
+        public CaseForm caseForm;
+        private void tsmiCaseManager_Click(object sender, EventArgs e)
         {
-            Import import = new Import(this);
-            import.ShowDialog();
+            /*Import import = new Import(this);
+            import.ShowDialog();*/
+            caseForm = new CaseForm(this);
+            caseForm.ShowDialog();
         }
 
-        private void tsmiExport_Click(object sender, EventArgs e)
-        {
-            Export export = new Export(this);
-            export.ShowDialog();
-        }
 
         private void tsmiExit_Click(object sender, EventArgs e)
         {
@@ -97,6 +97,7 @@ namespace Forensics
             makeCount.MakeSmsCount();
             makeCount.MakeChatCount();
             makeCount.MakeGroupChatCount();
+            mdiForm.clearTab();
             splashScreenManager1.CloseWaitForm();
         }
         private void tsmiFilter_Click(object sender, EventArgs e)
@@ -118,6 +119,7 @@ namespace Forensics
                 makeCount.MakeGroupChatCount();
                 makeCount.MakeChatCount();
                 makeCount.MakeGroupChatCount();
+                mdiForm.clearTab();
                 splashScreenManager1.CloseWaitForm();
             }
         }
@@ -159,6 +161,8 @@ namespace Forensics
                 DBTools.DeleteTable("WA_MFORENSICS_020700");
                 DBTools.DeleteTable("WA_MFORENSICS_090400");
                 DBTools.Zip();
+                mdiForm.setTree(); 
+                mdiForm.clearTab(); 
                 splashScreenManager1.CloseWaitForm();
             }
 

@@ -38,3 +38,11 @@ E:\开发\Forensics\AutoUpdater\obj\Debug\AutoUpdater.csproj.GenerateResource.Ca
 E:\开发\Forensics\AutoUpdater\obj\Debug\AutoUpdater.dll
 E:\开发\Forensics\AutoUpdater\obj\Debug\AutoUpdater.pdb
 E:\开发\Forensics\AutoUpdater\obj\Debug\AutoUpdater.csprojResolveAssemblyReference.cache
+E:\Forensics\AutoUpdater\bin\Debug\AutoUpdater.dll
+E:\Forensics\AutoUpdater\bin\Debug\AutoUpdater.pdb
+E:\Forensics\AutoUpdater\obj\Debug\AutoUpdater.csprojResolveAssemblyReference.cache
+E:\Forensics\AutoUpdater\obj\Debug\Iyond.Utility.DownloadConfirm.resources
+E:\Forensics\AutoUpdater\obj\Debug\Iyond.Utility.DownloadProgress.resources
+E:\Forensics\AutoUpdater\obj\Debug\AutoUpdater.csproj.GenerateResource.Cache
+E:\Forensics\AutoUpdater\obj\Debug\AutoUpdater.dll
+E:\Forensics\AutoUpdater\obj\Debug\AutoUpdater.pdb

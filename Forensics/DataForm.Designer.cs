@@ -30,23 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DataForm));
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("联系人", 4, 4);
-            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("短信息", 4, 4);
-            System.Windows.Forms.TreeNode treeNode3 = new System.Windows.Forms.TreeNode("微信好友", 4, 4);
-            System.Windows.Forms.TreeNode treeNode4 = new System.Windows.Forms.TreeNode("微信群", 4, 4);
-            System.Windows.Forms.TreeNode treeNode5 = new System.Windows.Forms.TreeNode("微信", 2, 2, new System.Windows.Forms.TreeNode[] {
-            treeNode3,
-            treeNode4});
-            System.Windows.Forms.TreeNode treeNode6 = new System.Windows.Forms.TreeNode("QQ好友", 4, 4);
-            System.Windows.Forms.TreeNode treeNode7 = new System.Windows.Forms.TreeNode("QQ群", 4, 4);
-            System.Windows.Forms.TreeNode treeNode8 = new System.Windows.Forms.TreeNode("QQ", 2, 2, new System.Windows.Forms.TreeNode[] {
-            treeNode6,
-            treeNode7});
-            System.Windows.Forms.TreeNode treeNode9 = new System.Windows.Forms.TreeNode("手机", 1, 1, new System.Windows.Forms.TreeNode[] {
-            treeNode1,
-            treeNode2,
-            treeNode5,
-            treeNode8});
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.splitContainerControl1 = new DevExpress.XtraEditors.SplitContainerControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
@@ -101,7 +84,7 @@
             // 
             this.xtraTabPage1.Controls.Add(this.tvList);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(235, 519);
+            this.xtraTabPage1.Size = new System.Drawing.Size(233, 515);
             // 
             // tvList
             // 
@@ -111,46 +94,8 @@
             this.tvList.ImageList = this.imageList1;
             this.tvList.Location = new System.Drawing.Point(0, 0);
             this.tvList.Name = "tvList";
-            treeNode1.ImageIndex = 4;
-            treeNode1.Name = "节点1";
-            treeNode1.SelectedImageIndex = 4;
-            treeNode1.Text = "联系人";
-            treeNode2.ImageIndex = 4;
-            treeNode2.Name = "节点2";
-            treeNode2.SelectedImageIndex = 4;
-            treeNode2.Text = "短信息";
-            treeNode3.ImageIndex = 4;
-            treeNode3.Name = "节点0";
-            treeNode3.SelectedImageIndex = 4;
-            treeNode3.Text = "微信好友";
-            treeNode4.ImageIndex = 4;
-            treeNode4.Name = "节点1";
-            treeNode4.SelectedImageIndex = 4;
-            treeNode4.Text = "微信群";
-            treeNode5.ImageIndex = 2;
-            treeNode5.Name = "节点3";
-            treeNode5.SelectedImageIndex = 2;
-            treeNode5.Text = "微信";
-            treeNode6.ImageIndex = 4;
-            treeNode6.Name = "节点2";
-            treeNode6.SelectedImageIndex = 4;
-            treeNode6.Text = "QQ好友";
-            treeNode7.ImageIndex = 4;
-            treeNode7.Name = "节点3";
-            treeNode7.SelectedImageIndex = 4;
-            treeNode7.Text = "QQ群";
-            treeNode8.ImageIndex = 2;
-            treeNode8.Name = "节点4";
-            treeNode8.SelectedImageIndex = 2;
-            treeNode8.Text = "QQ";
-            treeNode9.ImageIndex = 1;
-            treeNode9.Name = "节点0";
-            treeNode9.SelectedImageIndex = 1;
-            treeNode9.Text = "手机";
-            this.tvList.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode9});
             this.tvList.SelectedImageIndex = 0;
-            this.tvList.Size = new System.Drawing.Size(235, 519);
+            this.tvList.Size = new System.Drawing.Size(233, 515);
             this.tvList.TabIndex = 0;
             this.tvList.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvList_AfterSelect);
             // 
@@ -159,7 +104,7 @@
             this.xtcMain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtcMain.Location = new System.Drawing.Point(0, 0);
             this.xtcMain.Name = "xtcMain";
-            this.xtcMain.Size = new System.Drawing.Size(618, 534);
+            this.xtcMain.Size = new System.Drawing.Size(620, 534);
             this.xtcMain.TabIndex = 0;
             // 
             // DataForm

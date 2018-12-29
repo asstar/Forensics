@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Forensics</RootNamespace>
     <AssemblyName>Forensics</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <PublishUrl>发布\</PublishUrl>
@@ -161,6 +161,12 @@
     <Compile Include="About.designer.cs">
       <DependentUpon>About.cs</DependentUpon>
     </Compile>
+    <Compile Include="CaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CaseForm.Designer.cs">
+      <DependentUpon>CaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ContactForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +239,12 @@
     <Compile Include="UpLoad.Designer.cs">
       <DependentUpon>UpLoad.cs</DependentUpon>
     </Compile>
+    <Compile Include="UploadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UploadForm.Designer.cs">
+      <DependentUpon>UploadForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ZoneForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +284,9 @@
     <EmbeddedResource Include="About.resx">
       <DependentUpon>About.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="CaseForm.resx">
+      <DependentUpon>CaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ContactForm.resx">
       <DependentUpon>ContactForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +319,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UpLoad.resx">
       <DependentUpon>UpLoad.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UploadForm.resx">
+      <DependentUpon>UploadForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ZoneForm.resx">
       <DependentUpon>ZoneForm.cs</DependentUpon>

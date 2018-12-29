@@ -65,19 +65,20 @@ namespace Forensics
                 var query010100 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_010100" select b);
                 splashScreenManager1.SetWaitFormCaption("导入手机基本信息");
                 splashScreenManager1.SetWaitFormDescription("请稍后...");
-                importData.DeleteTable("WA_MFORENSICS_010100");
+                //importData.DeleteTable("WA_MFORENSICS_010100");
                 foreach (var item in query010100)
                 {
                     var parent = item.Parent;
                     var file = (from b in parent.Descendants("ITEM") where (string)b.Attribute("rmk") == "文件名" select b).FirstOrDefault();
                     DataTable result = importData.MakeTable(new WA_MFORENSICS_010100());
                     DataTable data = BcpHelper.bcp2dt(System.IO.Directory.GetCurrentDirectory() + "\\Output\\" + file.Attribute("val").Value, '\t', 0, result);
+                    StateInfo.CaseID = data.Rows[0][0].ToString();
                     importData.InsertData(data, "WA_MFORENSICS_010100");
 
                 }
 
                 var query010200 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_010200" select b);
-                importData.DeleteTable("WA_MFORENSICS_010200");
+                //importData.DeleteTable("WA_MFORENSICS_010200");
                 foreach (var item in query010200)
                 {
                     var parent = item.Parent;
@@ -89,7 +90,7 @@ namespace Forensics
                 }
 
                 var query010202 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_010202" select b);
-                importData.DeleteTable("WA_MFORENSICS_010202");
+                //importData.DeleteTable("WA_MFORENSICS_010202");
                 foreach (var item in query010202)
                 {
                     var parent = item.Parent;
@@ -101,7 +102,7 @@ namespace Forensics
                 }
 
                 var query010300 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_010300" select b);
-                importData.DeleteTable("WA_MFORENSICS_010300");
+                //importData.DeleteTable("WA_MFORENSICS_010300");
                 foreach (var item in query010300)
                 {
                     var parent = item.Parent;
@@ -114,7 +115,7 @@ namespace Forensics
                 var query010400 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_010400" select b);
                 splashScreenManager1.SetWaitFormCaption("导入联系人");
                 splashScreenManager1.SetWaitFormDescription("请稍后...");
-                importData.DeleteTable("WA_MFORENSICS_010400");
+                //importData.DeleteTable("WA_MFORENSICS_010400");
                 foreach (var item in query010400)
                 {
                     var parent = item.Parent;
@@ -126,7 +127,7 @@ namespace Forensics
                 }
                 splashScreenManager1.SetWaitFormCaption("导入联系电话");
                 var query010500 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_010500" select b);
-                importData.DeleteTable("WA_MFORENSICS_010500");
+                //importData.DeleteTable("WA_MFORENSICS_010500");
                 foreach (var item in query010500)
                 {
                     var parent = item.Parent;
@@ -137,7 +138,7 @@ namespace Forensics
                 }
                 splashScreenManager1.SetWaitFormCaption("导入短信");
                 var query010700 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_010700" select b);
-                importData.DeleteTable("WA_MFORENSICS_010700");
+                //importData.DeleteTable("WA_MFORENSICS_010700");
                 foreach (var item in query010700)
                 {
                     var parent = item.Parent;
@@ -149,7 +150,7 @@ namespace Forensics
 
                 splashScreenManager1.SetWaitFormCaption("导入社交账号");
                 var query020100 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_020100" select b);
-                importData.DeleteTable("WA_MFORENSICS_020100");
+                //importData.DeleteTable("WA_MFORENSICS_020100");
                 foreach (var item in query020100)
                 {
                     var parent = item.Parent;
@@ -161,7 +162,7 @@ namespace Forensics
 
                 splashScreenManager1.SetWaitFormCaption("导入社交好友");
                 var query020200 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_020200" select b);
-                importData.DeleteTable("WA_MFORENSICS_020200");
+                //importData.DeleteTable("WA_MFORENSICS_020200");
                 foreach (var item in query020200)
                 {
                     var parent = item.Parent;
@@ -176,7 +177,7 @@ namespace Forensics
                 }
                 splashScreenManager1.SetWaitFormCaption("导入社交圈好友");
                 var query020300 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_020300" select b);
-                importData.DeleteTable("WA_MFORENSICS_020300");
+                //importData.DeleteTable("WA_MFORENSICS_020300");
                 foreach (var item in query020300)
                 {
                     var parent = item.Parent;
@@ -187,7 +188,7 @@ namespace Forensics
                 }
                 splashScreenManager1.SetWaitFormCaption("导入群信息");
                 var query020400 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_020400" select b);
-                importData.DeleteTable("WA_MFORENSICS_020400");
+                //importData.DeleteTable("WA_MFORENSICS_020400");
                 foreach (var item in query020400)
                 {
                     var parent = item.Parent;
@@ -199,7 +200,7 @@ namespace Forensics
 
                 splashScreenManager1.SetWaitFormCaption("导入社交聊天");
                 var query020500 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_020500" select b);
-                importData.DeleteTable("WA_MFORENSICS_020500");
+                //importData.DeleteTable("WA_MFORENSICS_020500");
                 foreach (var item in query020500)
                 {
                     var parent = item.Parent;
@@ -210,7 +211,7 @@ namespace Forensics
                 }
                 splashScreenManager1.SetWaitFormCaption("导入社交群聊");
                 var query020600 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_020600" select b);
-                importData.DeleteTable("WA_MFORENSICS_020600");
+                //importData.DeleteTable("WA_MFORENSICS_020600");
                 foreach (var item in query020600)
                 {
                     var parent = item.Parent;
@@ -221,7 +222,7 @@ namespace Forensics
                 }
                 splashScreenManager1.SetWaitFormCaption("导入社交博客");
                 var query020700 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_020700" select b);
-                importData.DeleteTable("WA_MFORENSICS_020700");
+                //importData.DeleteTable("WA_MFORENSICS_020700");
                 foreach (var item in query020700)
                 {
                     var parent = item.Parent;
@@ -232,7 +233,7 @@ namespace Forensics
                 }
                 splashScreenManager1.SetWaitFormCaption("导入附件数据");
                 var query090400 = (from b in root.Descendants("ITEM") where (string)b.Attribute("val") == "WA_MFORENSICS_090400" select b);
-                importData.DeleteTable("WA_MFORENSICS_090400");
+                //importData.DeleteTable("WA_MFORENSICS_090400");
                 foreach (var item in query090400)
                 {
                     var parent = item.Parent;
@@ -242,8 +243,8 @@ namespace Forensics
                     importData.InsertData(data, "WA_MFORENSICS_090400");
                 }
 
-
-                /*
+                mainForm.parser();
+                //Thread.Sleep(3000);
                  path = System.IO.Directory.GetCurrentDirectory() + "\\Output";
                  splashScreenManager1.SetWaitFormCaption("删除目录");
                  if (Directory.Exists(path) == true)
@@ -257,14 +258,19 @@ namespace Forensics
                      {
                          File.Delete(path);
                      }
-                 }*/
+                 }
                 splashScreenManager1.CloseWaitForm();
                 /*this.Invoke((EventHandler)(delegate { mainForm.dataForm.contact.RefreshForm(); }));
                 this.Invoke((EventHandler)(delegate { mainForm.dataForm.sms.RefreshForm();}));
                 this.Invoke((EventHandler)(delegate { mainForm.dataForm.mmf.RefreshForm();}));*/
-                this.Invoke((EventHandler)(delegate { mainForm.parser(); }));
+                /*this.Invoke((EventHandler)(delegate { mainForm.parser(); }));
                 this.Invoke((EventHandler)(delegate { mainForm.mdiForm.setTree(); }));
-                this.Invoke((EventHandler)(delegate { this.Close(); }));
+                this.Invoke((EventHandler)(delegate { mainForm.mdiForm.clearTab(); }));
+                this.Invoke((EventHandler)(delegate { this.Close(); }));*/
+
+                mainForm.parser();
+                mainForm.caseForm.setTree();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -278,10 +284,14 @@ namespace Forensics
         {
             this.Enabled = false;
             splashScreenManager1.ShowWaitForm();
+            splashScreenManager1.SetWaitFormCaption("开始导入");
+            splashScreenManager1.SetWaitFormDescription("");
+            runImport();
+            /*splashScreenManager1.ShowWaitForm();
             splashScreenManager1.SetWaitFormCaption("开始录入");
             splashScreenManager1.SetWaitFormDescription("");
             Thread t = new Thread(runImport);
-            t.Start();
+            t.Start();*/
         }
     }
 }

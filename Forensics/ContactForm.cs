@@ -35,11 +35,11 @@ namespace Forensics
             List<Contact> result;
             if (keyword == null || keyword == "")
             {
-                result = contactBLL.SqlQuery("Select * From Contact Order By Seq").ToList();
+                result = contactBLL.SqlQuery("Select * From Contact Where TargetID='" + StateInfo.CaseID + "' Order By Seq").ToList();
             }
             else
             {
-                result = contactBLL.SqlQuery("Select * From Contact where  IsDeleted<>'1' AND (Name Like '%" + keyword + "%' OR Account Like '%" + keyword + "%')  Order By Seq").ToList();
+                result = contactBLL.SqlQuery("Select * From Contact where  IsDeleted<>'1' AND (Name Like '%" + keyword + "%' OR Account Like '%" + keyword + "%') AND TargetID='" + StateInfo.CaseID + "'  Order By Seq").ToList();
             }
             count = result.Count;
             //var display = inst.GetPagedTable(result, pager1.PageIndex, pager1.PageSize);
@@ -55,6 +55,8 @@ namespace Forensics
             {
                 dgvList.Columns[i].Visible = false;
             }
+            dgvList.Columns["联系人姓名"].FillWeight = 20;
+
             dgvList.Columns["联系人姓名"].Visible = true;
             dgvList.Columns["联系方式"].Visible = true;
 

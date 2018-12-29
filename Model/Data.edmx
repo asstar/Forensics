@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=E:\开发\Forensics\Forensics\bin\Debug\Database.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=E:\Forensics\Forensics\bin\Debug\Database.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Affix">
           <Key>
             <PropertyRef Name="ID" />
@@ -74,7 +74,7 @@
           <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="ChatCount" Type="integer" />
+          <Property Name="Count" Type="integer" />
           <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="GroupChat">
@@ -109,7 +109,7 @@
           <Property Name="GroupNum" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="GroupName" Type="nvarchar" MaxLength="2147483647" />
           <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
-          <Property Name="ChatCount" Type="integer" />
+          <Property Name="Count" Type="integer" />
           <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
         </EntityType>
         <EntityType Name="Info">
@@ -668,7 +668,7 @@
           <Property Name="Phone" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="Email" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="ChatCount" Type="Int64" />
+          <Property Name="Count" Type="Int64" />
           <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="GroupChat">
@@ -703,7 +703,7 @@
           <Property Name="GroupNum" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="GroupName" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
           <Property Name="DeleteStatus" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
-          <Property Name="ChatCount" Type="Int64" />
+          <Property Name="Count" Type="Int64" />
           <Property Name="IsDeleted" Type="String" MaxLength="2147483647" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Info">
@@ -1202,7 +1202,7 @@
             <EntityTypeMapping TypeName="Model.Friend">
               <MappingFragment StoreEntitySet="Friend">
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="ChatCount" ColumnName="ChatCount" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
                 <ScalarProperty Name="Email" ColumnName="Email" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
@@ -1243,7 +1243,7 @@
             <EntityTypeMapping TypeName="Model.GroupFriend">
               <MappingFragment StoreEntitySet="GroupFriend">
                 <ScalarProperty Name="IsDeleted" ColumnName="IsDeleted" />
-                <ScalarProperty Name="ChatCount" ColumnName="ChatCount" />
+                <ScalarProperty Name="Count" ColumnName="Count" />
                 <ScalarProperty Name="DeleteStatus" ColumnName="DeleteStatus" />
                 <ScalarProperty Name="GroupName" ColumnName="GroupName" />
                 <ScalarProperty Name="GroupNum" ColumnName="GroupNum" />

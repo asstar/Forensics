@@ -39,26 +39,30 @@ namespace Forensics
         {
             LoadDetailData();
         }
+        GroupFriendBLL groupFriendBLL = new GroupFriendBLL();
         void LoadMasterData()
         {
             int count;
 
             //var result = wxGroupBLL.SqlQuery("select * from GroupChat  where IsDeleted<>'1' group by GroupNum order by count desc").ToList();
 
-            List<GroupChat> result;
+            List<GroupFriend> result;
             if (keyword == null || keyword == "")
             {
-                result = wxGroupBLL.SqlQuery("select * from GroupChat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "'  And Account='" + StateInfo.Account + "' group by GroupNum order by count desc").ToList();
+                result = groupFriendBLL.SqlQuery("select * from GroupFriend  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND TargetID='" + StateInfo.CaseID + "' And Count>0   order by count desc").ToList();
+                //result = wxGroupBLL.SqlQuery("select * from GroupChat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "'  And Account='" + StateInfo.Account + "' AND TargetID='" + StateInfo.CaseID + "' group by GroupNum order by count desc").ToList();
             }
             else
             {
-                result = wxGroupBLL.SqlQuery("select * from GroupChat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND (Content Like '%" + keyword + "%' OR FriendAccount Like '%" + keyword + "%') group by GroupNum order by count desc").ToList(); 
+                result = groupFriendBLL.SqlQuery("Select GroupFriend.* from GroupChat,GroupFriend where GroupChat.IsDeleted<>'1' AND GroupChat.AccountType='" + StateInfo.ChatType + "' And GroupChat.Account='" + StateInfo.Account + "' AND GroupChat.TargetID='" + StateInfo.CaseID + "' And GroupFriend.Count>0  And (Content Like '%" + keyword + "%' OR GroupFriend.GroupNum Like '%" + keyword + "%')  And GroupFriend.GroupNum=GroupChat.GroupNum group by GroupFriend.GroupNum order by GroupFriend.count desc").ToList();
+                //result = groupFriendBLL.SqlQuery("select * from GroupFriend  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND TargetID='" + StateInfo.CaseID + "' And Count>0   order by count desc").ToList();
+                //result = wxGroupBLL.SqlQuery("select * from GroupChat  where IsDeleted<>'1' AND AccountType='" + StateInfo.ChatType + "' And Account='" + StateInfo.Account + "' AND (Content Like '%" + keyword + "%' OR FriendAccount Like '%" + keyword + "%') AND TargetID='" + StateInfo.CaseID + "' group by GroupNum order by count desc").ToList(); 
             }
             count = result.Count();
             var display = result.Skip((pager1.PageIndex - 1) * pager1.PageSize).Take(pager1.PageSize);
             pager1.DrawControl(count);
             DGVMaster.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            var temp = ListToDatatableHelper.ToDataTable<GroupChat>(display.ToList());
+            var temp = ListToDatatableHelper.ToDataTable<GroupFriend>(display.ToList());
 
             DGVMaster.DataSource = temp;
             temp.Columns["GroupName"].ColumnName = "群名称";
@@ -71,6 +75,7 @@ namespace Forensics
             DGVMaster.Columns["群名称"].Visible = true;
             DGVMaster.Columns["账号"].Visible = true;
             DGVMaster.Columns["数量"].Visible = true;
+            DGVMaster.Columns["数量"].FillWeight = 30;
 
         }
         string groupNum;
@@ -107,7 +112,7 @@ namespace Forensics
             temp.Columns["Content"].ColumnName = "群聊内容";
             temp.Columns["SendTime"].ColumnName = "收发时间";
             temp.Columns["Direction"].ColumnName = "收发方向";
-            for (int i = 0; i < DGVMaster.Columns.Count; i++)
+            for (int i = 0; i < DGVDetail.Columns.Count; i++)
             {
                 DGVDetail.Columns[i].Visible = false;
             }
@@ -231,7 +236,6 @@ namespace Forensics
                                 byte[] buffer = item.Content;
                                 fsWrite.Write(buffer, 0, buffer.Length);
                             }
-
                         }
                     }
 

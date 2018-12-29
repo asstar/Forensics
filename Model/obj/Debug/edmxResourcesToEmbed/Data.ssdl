@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=E:\开发\Forensics\Forensics\bin\Debug\Database.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="Model.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=E:\Forensics\Forensics\bin\Debug\Database.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Affix">
     <Key>
       <PropertyRef Name="ID" />
@@ -69,7 +69,7 @@
     <Property Name="Phone" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="Email" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
-    <Property Name="ChatCount" Type="integer" />
+    <Property Name="Count" Type="integer" />
     <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="GroupChat">
@@ -104,7 +104,7 @@
     <Property Name="GroupNum" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="GroupName" Type="nvarchar" MaxLength="2147483647" />
     <Property Name="DeleteStatus" Type="nvarchar" MaxLength="2147483647" />
-    <Property Name="ChatCount" Type="integer" />
+    <Property Name="Count" Type="integer" />
     <Property Name="IsDeleted" Type="nvarchar" MaxLength="2147483647" />
   </EntityType>
   <EntityType Name="Info">
